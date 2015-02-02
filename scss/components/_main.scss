@@ -19,7 +19,8 @@ html {
 
 
 body{
-  font-family: sans-serif;
+  font-family: $font-opensans;
+  background-color: $dark-purple;
   @include zero;
   // Hides close button if there is no js
     &.noscript .close-btn
@@ -33,6 +34,10 @@ header {
   position: relative;
 }
 
+h1 {
+  color: $white;
+}
+
 .toggle-btn{
     position: absolute;
     right: 1em;
@@ -41,29 +46,39 @@ header {
 
 .navigation{
     @include zero;
+    ul{
+        padding-left: 0;
+        background-color: $med-purple;
+    }
     li{
         list-style-type: none;
-        a{
-            display: block;
-            padding: .5em 1em;
-            text-align: center;
-            border-bottom: 1px solid $light-grey;
-            text-decoration: none;
+    a{
+        color: $light-purple;
+        text-transform: uppercase;
+        display: block;
+        padding: 1em 1em;
+        text-align: center;
+        border-bottom: 1px solid $light-purple;
+        text-decoration: none;
         }
-
-        &:first-child a{
-            border-top: 1px solid $light-grey;
+        &:last-child a{
+            border-bottom: none;
+        }
+        a:hover{
+            color: $white;
+            @include ease(all, 500ms, ease-in-out);
         }
     }
 }
 
 .toggle-btn,
 .close-btn{
-    color: $text-color;
+    margin-left: 10px;
+    color: $white;
     height: 40px;
     width: 40px;
     i{
-        border: 1px solid $light-grey;
+        border: 1px solid $white;
         padding: .5em;
     }
     span{
@@ -74,9 +89,12 @@ header {
 
 
 // Sliding Navigation
-@media only screen and (max-width: 60em){
+@media only screen and (max-width: 30em){
 //Page should move when nav opens
 //only time we will ever use max-width
+    body{
+        @include zero;
+    }
     .site-wrapper{
         position:relative;
         overflow: hidden;
@@ -105,21 +123,138 @@ header {
         position: absolute;
         width: 100%;
         height: 100%;
-        min-height: 600px;
+        min-height: 300px;
+        margin-top: 0;
         top: 0;
         bottom: 0;
         right: -100%;
     }
 }//@media
 
+@media only screen and (min-width: 30em) and (max-width: 60em){
+//Page should move when nav opens
+//only time we will ever use max-width
+    body{
+        background-color: $med-purple;
+    }
+    header {
+        padding-top: 20px;
+    }
+    .site-wrapper{
+        position:relative;
+        overflow: hidden;
+        width: 100%;
+        z-index: 100;
+
+        .sliding-canvas{ //before it slides
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform: translateX(0); //slide left and right but by default sit at 0
+            @include ease(all, 300ms, ease-in-out); //easing
+        } //.sliding-canvas
+
+        &[data-state="slide-open"] .toggle-btn{ //after it slides
+            display: none;
+        }
+
+        &[data-state="slide-open"] .sliding-canvas{ //after it slides
+            transform: translateX(-40%);
+        }
+
+        &[data-state="slide-open"]{ //after it slides
+            overflow: visible;
+        }
+    }//.site-wrapper
+
+    .navigation{
+    @include zero;
+        ul{
+        background-color: $med-purple;
+        display: block;
+        margin: 0;
+        padding-top: 0;
+        }
+
+        li{
+        background-color: $dark-purple;
+        list-style-type: none;
+        display: block;
+        a{
+            border-bottom: none;
+            display: inline-block;
+        }
+        a:hover {
+            color: $white;
+        }
+        &:first-child a{
+            border: none;
+        }
+        }
+    }
+
+    //Navigation
+    .slide-menu{
+        background-color: $dark-purple;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        min-height: 1000px;
+        top: 0;
+        bottom: 0;
+        right: -100%;
+        padding-top: 50px;
+    }
+
+    .toggle-btn,
+    .close-btn{
+        top: 50px;
+    }
+}//@media
+
+
 @media only screen and (min-width: 60em){
+    body{
+        background-color: $dark-purple;
+    }
+
     .toggle-btn,
     .close-btn{
         display:none;
+    }
+    h1{
+    display: inline-block;
+    float: left;
     }
 
     .slide-menu{
         position:static;
         right: auto;
     }
+
+    .navigation{
+    @include zero;
+        ul{
+        background-color: $dark-purple;
+        display: inline-block;
+        margin: 0;
+        padding-top: 30px;
+        float: right;
+        }
+
+        li{
+        list-style-type: none;
+        display: inline-block;
+        a{
+            border-bottom: none;
+        }
+        a:hover {
+            color: $white;
+        }
+        &:first-child a{
+            border: none;
+        }
+        }
+    }
+
 }//media

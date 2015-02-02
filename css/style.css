@@ -83,66 +83,87 @@ html {
 
 /* line 21, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
 body {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #251721;
   margin: 0;
   padding: 0; }
-  /* line 26, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  /* line 27, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
   body.noscript .close-btn body.noscript .toggle-btn {
     display: none; }
 
-/* line 31, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+/* line 32, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
 header {
   padding: 0 1em;
   position: relative; }
 
-/* line 36, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+/* line 37, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+h1 {
+  color: #fff; }
+
+/* line 41, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
 .toggle-btn {
   position: absolute;
   right: 1em;
   top: 0; }
 
-/* line 42, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+/* line 47, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
 .navigation {
   margin: 0;
   padding: 0; }
-  /* line 44, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  /* line 49, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  .navigation ul {
+    padding-left: 0;
+    background-color: #3f1529; }
+  /* line 53, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
   .navigation li {
     list-style-type: none; }
-    /* line 46, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    /* line 55, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
     .navigation li a {
+      color: #72606c;
+      text-transform: uppercase;
       display: block;
-      padding: 0.5em 1em;
+      padding: 1em 1em;
       text-align: center;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #72606c;
       text-decoration: none; }
-    /* line 54, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
-    .navigation li:first-child a {
-      border-top: 1px solid #ccc; }
+    /* line 64, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .navigation li:last-child a {
+      border-bottom: none; }
+    /* line 67, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .navigation li a:hover {
+      color: #fff;
+      transition: all 500ms ease-in-out; }
 
-/* line 61, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+/* line 75, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
 .toggle-btn, .close-btn {
-  color: #222;
+  margin-left: 10px;
+  color: #fff;
   height: 40px;
   width: 40px; }
-  /* line 65, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  /* line 80, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
   .toggle-btn i, .close-btn i {
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
     padding: 0.5em; }
-  /* line 69, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  /* line 84, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
   .toggle-btn span, .close-btn span {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
     display: block; }
 
-@media only screen and (max-width: 60em) {
-  /* line 80, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+@media only screen and (max-width: 30em) {
+  /* line 95, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  body {
+    margin: 0;
+    padding: 0; }
+
+  /* line 98, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
   .site-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
     z-index: 100; }
-    /* line 86, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    /* line 104, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
     .site-wrapper .sliding-canvas {
       width: 100%;
       height: 100%;
@@ -151,33 +172,147 @@ header {
           -ms-transform: translateX(0);
               transform: translateX(0);
       transition: all 300ms ease-in-out; }
-    /* line 94, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    /* line 112, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
     .site-wrapper[data-state="slide-open"] .sliding-canvas {
       -webkit-transform: translateX(-100%);
           -ms-transform: translateX(-100%);
               transform: translateX(-100%); }
-    /* line 98, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    /* line 116, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
     .site-wrapper[data-state="slide-open"] {
       overflow: visible; }
 
-  /* line 104, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  /* line 122, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
   .slide-menu {
     position: absolute;
     width: 100%;
     height: 100%;
-    min-height: 600px;
+    min-height: 300px;
+    margin-top: 0;
     top: 0;
     bottom: 0;
     right: -100%; }
  }
 
+@media only screen and (min-width: 30em) and (max-width: 60em) {
+  /* line 137, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  body {
+    background-color: #3f1529; }
+
+  /* line 140, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  header {
+    padding-top: 20px; }
+
+  /* line 143, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  .site-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    z-index: 100; }
+    /* line 149, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .site-wrapper .sliding-canvas {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0);
+      transition: all 300ms ease-in-out; }
+    /* line 157, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .site-wrapper[data-state="slide-open"] .toggle-btn {
+      display: none; }
+    /* line 161, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .site-wrapper[data-state="slide-open"] .sliding-canvas {
+      -webkit-transform: translateX(-40%);
+          -ms-transform: translateX(-40%);
+              transform: translateX(-40%); }
+    /* line 165, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .site-wrapper[data-state="slide-open"] {
+      overflow: visible; }
+
+  /* line 170, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  .navigation {
+    margin: 0;
+    padding: 0; }
+    /* line 172, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .navigation ul {
+      background-color: #3f1529;
+      display: block;
+      margin: 0;
+      padding-top: 0; }
+    /* line 179, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .navigation li {
+      background-color: #251721;
+      list-style-type: none;
+      display: block; }
+      /* line 183, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+      .navigation li a {
+        border-bottom: none;
+        display: inline-block; }
+      /* line 187, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+      .navigation li a:hover {
+        color: #fff; }
+      /* line 190, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+      .navigation li:first-child a {
+        border: none; }
+
+  /* line 197, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  .slide-menu {
+    background-color: #251721;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 1000px;
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    padding-top: 50px; }
+
+  /* line 210, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  .toggle-btn, .close-btn {
+    top: 50px; }
+ }
+
 @media only screen and (min-width: 60em) {
-  /* line 117, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  /* line 217, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  body {
+    background-color: #251721; }
+
+  /* line 222, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
   .toggle-btn, .close-btn {
     display: none; }
 
-  /* line 121, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  /* line 225, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  h1 {
+    display: inline-block;
+    float: left; }
+
+  /* line 230, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
   .slide-menu {
     position: static;
     right: auto; }
+
+  /* line 235, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+  .navigation {
+    margin: 0;
+    padding: 0; }
+    /* line 237, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .navigation ul {
+      background-color: #251721;
+      display: inline-block;
+      margin: 0;
+      padding-top: 30px;
+      float: right; }
+    /* line 245, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+    .navigation li {
+      list-style-type: none;
+      display: inline-block; }
+      /* line 248, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+      .navigation li a {
+        border-bottom: none; }
+      /* line 251, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+      .navigation li a:hover {
+        color: #fff; }
+      /* line 254, /Users/alysonconner/Documents/GD6/webdev/week3/exercise-3/scss/components/main */
+      .navigation li:first-child a {
+        border: none; }
  }
